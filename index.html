@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="0; url=wedding.html">
+  <meta name="theme-color" content="#f7f1e6">
+  <meta name="description" content="The wedding invitation of Siddarth and Kowsalya, 16 November 2026.">
+  <title>Siddarth &amp; Kowsalya — The Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f1e6;
+      --paper-light: #fbf8f0;
+      --wine: #702d38;
+      --wine-deep: #54232d;
+      --gold: #a7844d;
+      --gold-light: #c6ab78;
+      --ink: #4d4036;
+      --muted: #776858;
+      --rule: rgba(167, 132, 77, .52);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px 14px 32px;
+      display: grid;
+      justify-items: center;
+      align-content: start;
+      background-color: #eae1d2;
+      background-image: radial-gradient(ellipse at 15% 18%, rgba(255,255,255,.66), transparent 38%), radial-gradient(ellipse at 84% 82%, rgba(194,166,119,.14), transparent 40%);
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+    }
+
+    .invitation {
+      position: relative;
+      isolation: isolate;
+      width: min(100%, 432px);
+      aspect-ratio: 9 / 16;
+      overflow: hidden;
+      padding: 5.1% 7.4% 4.5%;
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(ellipse at 10% 12%, rgba(167,132,77,.085), transparent 28%),
+        radial-gradient(ellipse at 92% 88%, rgba(112,45,56,.055), transparent 26%),
+        repeating-linear-gradient(45deg, rgba(167,132,77,.025) 0 1px, transparent 1px 7px);
+      box-shadow: 0 18px 48px rgba(65, 45, 32, .2);
+      text-align: center;
+    }
+
+    .invitation::before,
+    .invitation::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+    }
+
+    .invitation::before {
+      inset: 3.2%;
+      border: 1px solid var(--wine);
+      outline: 1px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .invitation::after {
+      inset: 0;
+      opacity: .2;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23a7844d' stroke-width='.65'%3E%3Cpath d='M0 0c26 0 36 10 36 36C10 36 0 26 0 0Zm100 0C74 0 64 10 64 36c26 0 36-10 36-36ZM0 100c26 0 36-10 36-36-26 0-36 10-36 36Zm100 0c-26 0-36-10-36-36 26 0 36 10 36 36Z'/%3E%3Cpath d='M0 0c18 4 32 18 36 36M100 0C82 4 68 18 64 36M0 100c18-4 32-18 36-36m64 36c-18-4-32-18-36-36'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 100px 100px;
+      mask-image: linear-gradient(to bottom, #000, transparent 35%, transparent 65%, #000);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .top-motif {
+      width: 42px;
+      height: 37px;
+      margin-bottom: 1px;
+      color: var(--gold);
+    }
+
+    .invocation {
+      margin: 0;
+      color: var(--wine);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(10px, 2.9vw, 13px);
+      letter-spacing: .13em;
+    }
+
+    .fine-rule {
+      display: flex;
+      width: 62%;
+      align-items: center;
+      gap: 8px;
+      color: var(--gold);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .fine-rule::before,
+    .fine-rule::after {
+      height: 1px;
+      flex: 1;
+      background: var(--rule);
+      content: "";
+    }
+
+    .parents {
+      max-width: 100%;
+      margin: 0;
+      font-size: clamp(12px, 3.45vw, 15px);
+      line-height: 1.2;
+    }
+
+    .request {
+      max-width: 94%;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(11px, 3.2vw, 14px);
+      line-height: 1.2;
+    }
+
+    .couple {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 0;
+      margin: 0;
+    }
+
+    .person {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .portrait {
+      position: relative;
+      width: clamp(55px, 15vw, 66px);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--gold);
+      outline: 1px solid rgba(112,45,56,.48);
+      outline-offset: 3px;
+      background: linear-gradient(145deg, rgba(255,255,255,.8), rgba(218,200,169,.55));
+      color: var(--wine);
+      cursor: pointer;
+    }
+
+    .portrait::before,
+    .portrait::after {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-color: var(--gold);
+      border-style: solid;
+      content: "";
+      pointer-events: none;
+    }
+
+    .portrait::before { top: 3px; left: 3px; border-width: 1px 0 0 1px; }
+    .portrait::after { right: 3px; bottom: 3px; border-width: 0 1px 1px 0; }
+
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    .portrait.has-image img { display: block; }
+    .portrait.has-image .portrait-mark { display: none; }
+
+    .portrait-mark {
+      display: grid;
+      justify-items: center;
+      gap: 3px;
+      color: var(--wine);
+    }
+
+    .portrait-mark svg { width: 22px; height: 22px; }
+    .portrait-mark span { font: 7px/1 "Libre Baskerville", Georgia, serif; letter-spacing: .07em; }
+
+    .portrait input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .person-name {
+      margin: 8px 0 0;
+      color: var(--wine);
+      font-family: Allura, "Brush Script MT", cursive;
+      font-size: clamp(17px, 4.8vw, 21px);
+      line-height: .95;
+      white-space: nowrap;
+    }
+
+    .degree {
+      margin: 2px 0 0;
+      font-size: clamp(10px, 2.8vw, 12px);
+      line-height: 1;
+    }
+
+    .occupation {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: clamp(9px, 2.6vw, 11px);
+      font-style: italic;
+      line-height: 1.05;
+    }
+
+    .with {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      z-index: 2;
+      padding: 0 5px;
+      background: var(--paper);
+      color: var(--gold);
+      font-family: Allura, "Brush Script MT", cursive;
+      font-size: 21px;
+      line-height: 1;
+      transform: translateX(-50%);
+    }
+
+    .bride-parentage {
+      max-width: 98%;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(9px, 2.65vw, 11.5px);
+      line-height: 1.12;
+    }
+
+    .event {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(11px, 3.15vw, 13.5px);
+      line-height: 1.14;
+    }
+
+    .event h2 {
+      margin: 0 0 3px;
+      color: var(--wine);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(10px, 2.9vw, 12.5px);
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+
+    .event p { margin: 1px 0; }
+    .venue-name { font-weight: 700; }
+    .address { max-width: 95%; margin-inline: auto !important; }
+
+    .closing {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(10px, 2.8vw, 12px);
+      font-style: italic;
+      line-height: 1;
+    }
+
+    .family {
+      margin: -3px 0 0;
+      color: var(--wine);
+      font-family: "Libre Baskerville", Georgia, serif;
+      font-size: clamp(10px, 2.9vw, 12px);
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .tools {
+      width: min(100%, 432px);
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding-top: 16px;
+    }
+
+    .tools button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border: 1px solid var(--wine);
+      background: var(--paper-light);
+      color: var(--wine-deep);
+      font: 12px "Libre Baskerville", Georgia, serif;
+      cursor: pointer;
+    }
+
+    .tools button:hover { background: #f0e5d4; }
+    .tools svg { width: 15px; height: 15px; }
+
+    @media (max-width: 360px) {
+      body { padding: 10px 8px 20px; }
+      .invitation { padding-inline: 7%; }
+      .request { max-width: 98%; }
+      .portrait { width: 54px; }
+      .person-name { font-size: 17px; }
+    }
+
+    @media print {
+      @page { size: 108mm 192mm; margin: 0; }
+      body { padding: 0; background: white; }
+      .invitation { width: 108mm; height: 192mm; box-shadow: none; }
+      .tools { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="invitation" aria-label="Wedding invitation for Siddarth and Kowsalya">
+    <div class="content">
+      <svg class="top-motif" viewBox="0 0 64 58" fill="none" aria-hidden="true">
+        <g stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M32 48c-2-9-12-12-12-21 0-5 5-9 12-14 7 5 12 9 12 14 0 9-10 12-12 21Z"/>
+          <path d="M32 45c-7-8-17-5-22-12-3-4-1-10 3-17 9 1 15 3 18 8m1 21c7-8 17-5 22-12 3-4 1-10-3-17-9 1-15 3-18 8"/>
+          <path d="M32 47c-10-4-18 3-26 0-5-2-6-8-6-16 8-4 15-5 20-2m12 18c10-4 18 3 26 0 5-2 6-8 6-16-8-4-15-5-20-2M23 49h18M27 53h10"/>
+          <circle cx="32" cy="9" r="2"/>
+        </g>
+      </svg>
+
+      <p class="invocation">|| Muneswaran Thunai ||</p>
+      <div class="fine-rule" aria-hidden="true">❧</div>
+      <p class="parents">Mr. R. Ganesan and Mrs. Rukmani Ganesan</p>
+      <p class="request">solicit your esteemed presence with family and friends on the auspicious occasion of the marriage of their son</p>
+
+      <section class="couple" aria-label="The couple">
+        <div class="person">
+          <label class="portrait" aria-label="Add groom photo">
+            <span class="portrait-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 18.5 8.5 14l3 3 4.2-5 4.3 6.5H4Z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>GROOM</span>
+            </span>
+            <img alt="Groom portrait">
+            <input type="file" accept="image/*" data-photo="groom" aria-label="Choose groom photo">
+          </label>
+          <h1 class="person-name">Selvan G. Siddarth</h1>
+          <p class="degree">B.E.</p>
+          <p class="occupation">(Software Engineer - Athenahealth)</p>
+        </div>
+        <span class="with">with</span>
+        <div class="person">
+          <label class="portrait" aria-label="Add bride photo">
+            <span class="portrait-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 18.5 8.5 14l3 3 4.2-5 4.3 6.5H4Z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="8" r="2" stroke="currentColor" stroke-width="1.2"/></svg>
+              <span>BRIDE</span>
+            </span>
+            <img alt="Bride portrait">
+            <input type="file" accept="image/*" data-photo="bride" aria-label="Choose bride photo">
+          </label>
+          <h2 class="person-name">Selvi S. Kowsalya</h2>
+          <p class="degree">B.E.</p>
+          <p class="occupation">(Software Engineer - TCS)</p>
+        </div>
+      </section>
+
+      <p class="bride-parentage">(D/o. (Late) S. Sivagnanam - Mrs. S. Latha, Chennai)</p>
+      <div class="fine-rule" aria-hidden="true">❧</div>
+
+      <section class="event" aria-labelledby="wedding-title">
+        <h2 id="wedding-title">Wedding Ceremony</h2>
+        <p>On Monday, 16th November 2026</p>
+        <p>Between 6.00 a.m. and 7.30 a.m.</p>
+      </section>
+
+      <section class="event" aria-labelledby="venue-title">
+        <h2 id="venue-title">Venue</h2>
+        <p class="venue-name">Manjula Mahal A/C Thirumana Mandapam</p>
+        <p class="address">Poonamallee - Avadi High Road, Opp. Vivekanandha School, Avadi, Chennai.</p>
+      </section>
+
+      <section class="event" aria-labelledby="reception-title">
+        <h2 id="reception-title">Reception</h2>
+        <p>15th November 2026, Sunday, 6.30 p.m. onwards</p>
+      </section>
+
+      <div class="fine-rule" aria-hidden="true">❧</div>
+      <p class="closing">With best compliments from</p>
+      <p class="family">Relatives &amp; Friends</p>
+    </div>
+  </main>
+
+  <nav class="tools" aria-label="Invitation actions">
+    <button type="button" id="share-button" title="Share invitation">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 13v6.5h14V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Share invitation
+    </button>
+    <button type="button" id="print-button" title="Print or save as PDF">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 8V3.5h10V8M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2m-10-3h10v7H7v-7Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="18" cy="11.5" r=".8" fill="currentColor"/></svg>
+      Print / PDF
+    </button>
+  </nav>
+
+  <script>
+    document.querySelectorAll("[data-photo]").forEach((input) => {
+      input.addEventListener("change", () => {
+        const file = input.files && input.files[0];
+        if (!file) return;
+        const frame = input.closest(".portrait");
+        const image = frame.querySelector("img");
+        if (image.dataset.objectUrl) URL.revokeObjectURL(image.dataset.objectUrl);
+        image.dataset.objectUrl = URL.createObjectURL(file);
+        image.src = image.dataset.objectUrl;
+        frame.classList.add("has-image");
+      });
+    });
+
+    document.querySelector("#print-button").addEventListener("click", () => window.print());
+
+    document.querySelector("#share-button").addEventListener("click", async () => {
+      const shareData = {
+        title: "Siddarth & Kowsalya | Wedding Invitation",
+        url: window.location.href,
+        text: "|| Muneswaran Thunai ||\n\nSelvan G. Siddarth & Selvi S. Kowsalya\nWedding Ceremony: Monday, 16th November 2026, Between 6.00 a.m. and 7.30 a.m.\nReception: 15th November 2026, Sunday, 6.30 p.m. onwards"
+      };
+      if (navigator.share) {
+        try { await navigator.share(shareData); } catch (error) {
+          if (error.name !== "AbortError") await navigator.clipboard?.writeText(shareData.text);
+        }
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(shareData.text);
+        alert("Invitation details copied to clipboard.");
+      } else {
+        window.open(`https://wa.me/?text=${encodeURIComponent(shareData.text)}`, "_blank", "noopener");
+      }
+    });
+  </script>
+</body>
+</html>

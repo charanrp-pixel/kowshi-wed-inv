@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f3e9">
+  <meta name="description" content="Join Selvan G. Siddarth and Selvi S. Kowsalya for their wedding on 16 November 2026 in Chennai.">
+  <title>Siddarth &amp; Kowsalya — The Wedding</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8f3e9;
+      --paper-light: #fffdf8;
+      --ink: #312920;
+      --muted: #74695b;
+      --wine: #743643;
+      --wine-dark: #54242e;
+      --clay: #b97459;
+      --gold: #a98a58;
+      --rule: #d8c9ad;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Cormorant Garamond", Georgia, serif; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: inherit; text-decoration: none; }
+    .topline { height: 5px; background: linear-gradient(90deg, var(--wine) 0 35%, var(--gold) 35% 68%, #79805b 68%); }
+
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      height: 67px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 clamp(18px, 4vw, 58px);
+      border-bottom: 1px solid rgba(95,75,51,.15);
+      background: rgba(255,253,248,.94);
+      backdrop-filter: blur(12px);
+    }
+    .nav-left, .nav-right { display: flex; align-items: center; gap: clamp(13px, 2.3vw, 31px); }
+    .nav-right { justify-content: flex-end; }
+    .nav-link { position: relative; padding: 8px 0; color: #443c32; font: 600 9px "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .nav-link::after { position: absolute; right: 0; bottom: 2px; left: 0; height: 1px; background: var(--clay); content: ""; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
+    .nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+    .wordmark { display: grid; justify-items: center; color: var(--wine-dark); line-height: .9; }
+    .wordmark strong { font: 27px/1 Allura, cursive; white-space: nowrap; }
+    .wordmark span { margin-top: 1px; font: 7px "DM Sans", sans-serif; letter-spacing: .25em; text-transform: uppercase; }
+    .nav-tools { display: flex; align-items: center; gap: 10px; }
+    .icon-action { width: 35px; height: 35px; display: grid; place-items: center; border: 0; background: transparent; color: #786f62; cursor: pointer; }
+    .icon-action svg { width: 17px; height: 17px; }
+    .icon-action.is-saved { color: var(--wine); }
+    .icon-action.is-saved svg { fill: #ead1d0; }
+    .menu-toggle { display: none; }
+
+    .hero {
+      position: relative;
+      min-height: min(540px, 60vw);
+      min-height: clamp(420px, 41vw, 590px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: #c99b75 url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=88") center 54% / cover no-repeat;
+      isolation: isolate;
+    }
+    .hero::before { position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, rgba(248,241,226,.96) 0%, rgba(248,241,226,.86) 31%, rgba(248,241,226,.48) 53%, rgba(52,37,26,.05) 100%), linear-gradient(0deg, rgba(45,32,22,.14), transparent 44%); content: ""; }
+    .hero-inner { width: min(100% - 12vw, 1320px); margin: 0 auto; padding: 52px 0 58px; }
+    .hero-copy { max-width: 590px; animation: arrive .7s ease both; }
+    .hero-kicker { margin: 0 0 13px; color: var(--wine); font: italic 25px/1.05 Allura, cursive; }
+    .hero h1 { max-width: 580px; margin: 0; color: #2c241e; font: 500 clamp(40px, 5vw, 69px)/.99 "Cormorant Garamond", Georgia, serif; }
+    .hero h1 span { display: block; }
+    .hero-divider { display: flex; width: 148px; align-items: center; gap: 10px; margin: 22px 0 17px; color: var(--clay); }
+    .hero-divider::before, .hero-divider::after { height: 1px; flex: 1; background: var(--rule); content: ""; }
+    .hero-divider svg { width: 12px; height: 12px; fill: currentColor; }
+    .hero-intro { max-width: 380px; margin: 0 0 22px; font-size: 19px; line-height: 1.2; }
+    .hero-actions { display: flex; align-items: center; gap: 22px; }
+    .button { min-height: 43px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 19px; border: 1px solid var(--clay); background: var(--clay); color: white; cursor: pointer; font: 600 10px "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; transition: background .18s ease, transform .18s ease; }
+    .button:hover { background: var(--wine); border-color: var(--wine); transform: translateY(-1px); }
+    .button svg { width: 15px; height: 15px; }
+    .text-button { padding: 10px 0; border: 0; background: transparent; color: #8e6651; cursor: pointer; font: 600 10px "DM Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+    .hero-date { margin: 29px 0 0; color: #665744; font: 600 10px "DM Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+
+    .intro-strip { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #e2d8c6; background: var(--paper); }
+    .intro-cell { min-height: 164px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 23px 24px; text-align: center; }
+    .intro-cell + .intro-cell { border-left: 1px solid #e3d9c8; }
+    .intro-cell h2 { margin: 0; font: 500 20px "Cormorant Garamond", Georgia, serif; text-transform: uppercase; }
+    .ornament { display: flex; width: 130px; align-items: center; gap: 7px; margin: 9px 0 7px; color: var(--gold); font-size: 12px; }
+    .ornament::before, .ornament::after { height: 1px; flex: 1; background: var(--rule); content: ""; }
+    .intro-cell p { margin: 0; font-size: 16px; line-height: 1.22; }
+    .intro-cell .small { margin-top: 3px; color: var(--muted); font-size: 14px; }
+    .map-link { margin-top: 8px; color: var(--wine); font: 600 9px "DM Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+
+    .section { padding: 86px 24px; }
+    .section-inner { width: min(100%, 1060px); margin: 0 auto; }
+    .section-heading { max-width: 630px; margin: 0 auto 42px; text-align: center; }
+    .section-kicker { margin: 0 0 9px; color: var(--clay); font: 600 9px "DM Sans", sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    .section-heading h2 { margin: 0; font: 500 clamp(34px, 4.3vw, 48px)/1.05 "Cormorant Garamond", Georgia, serif; }
+    .section-heading p { margin: 12px auto 0; color: var(--muted); font-size: 17px; line-height: 1.35; }
+    .story-grid { display: grid; grid-template-columns: 1fr 110px 1fr; align-items: center; gap: 26px; }
+    .portrait-card { text-align: center; }
+    .portrait-upload { width: min(100%, 260px); aspect-ratio: 4 / 5; overflow: hidden; display: grid; place-items: center; margin: auto; border: 1px solid var(--gold); outline: 1px solid rgba(116,54,67,.35); outline-offset: 5px; background: radial-gradient(ellipse at 50% 25%, #fffdf8, #e9dfcb); color: var(--wine); }
+    .portrait-placeholder { display: grid; justify-items: center; gap: 9px; }
+    .portrait-placeholder svg { width: 35px; height: 35px; }
+    .portrait-placeholder span { font: 600 9px "DM Sans", sans-serif; letter-spacing: .14em; }
+    .portrait-name { margin: 19px 0 3px; color: var(--wine); font: 37px/.95 Allura, cursive; }
+    .portrait-role { margin: 0; color: var(--muted); font-size: 14px; font-style: italic; }
+    .story-ampersand { color: var(--gold); font: 58px Allura, cursive; text-align: center; }
+    .family-note { max-width: 650px; margin: 39px auto 0; color: var(--muted); font-size: 17px; line-height: 1.4; text-align: center; }
+
+    .wedding-section { background: #eee5d6; }
+    .event-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .event-block { min-height: 230px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 28px; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); text-align: center; }
+    .event-icon { width: 28px; height: 28px; margin-bottom: 9px; color: var(--wine); }
+    .event-block h3 { margin: 0 0 10px; color: var(--wine); font: 500 23px "Cormorant Garamond", Georgia, serif; }
+    .event-block p { margin: 2px 0; font-size: 17px; line-height: 1.25; }
+    .event-block .event-time { font-weight: 600; }
+
+    .venue-section { background: var(--paper-light); }
+    .venue-grid { display: grid; grid-template-columns: 1.1fr .9fr; min-height: 300px; border: 1px solid #e5dbc9; }
+    .venue-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 6vw, 62px); }
+    .venue-copy h3 { margin: 0 0 9px; color: var(--wine); font: 500 32px/1.05 "Cormorant Garamond", Georgia, serif; }
+    .venue-copy p { margin: 0 0 17px; color: var(--muted); font-size: 16px; line-height: 1.4; }
+    .venue-copy .address { color: var(--ink); }
+    .venue-map { position: relative; min-height: 260px; overflow: hidden; display: grid; place-items: center; background-color: #e6ddca; background-image: linear-gradient(35deg, transparent 46%, rgba(255,255,255,.75) 47% 49%, transparent 50%), linear-gradient(145deg, transparent 42%, rgba(255,255,255,.7) 43% 45%, transparent 46%), repeating-linear-gradient(0deg, transparent 0 37px, rgba(167,132,77,.14) 37px 39px), repeating-linear-gradient(90deg, transparent 0 54px, rgba(167,132,77,.12) 54px 56px); }
+    .venue-map::before { position: absolute; width: 95px; height: 95px; border: 1px solid rgba(116,54,67,.2); border-radius: 50%; content: ""; }
+    .venue-map::after { position: absolute; width: 47px; height: 47px; border: 1px solid rgba(116,54,67,.2); border-radius: 50%; content: ""; }
+    .map-pin { position: relative; z-index: 1; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50% 50% 50% 0; background: var(--wine); color: white; box-shadow: 0 5px 13px rgba(73,40,40,.24); transform: translateY(-18px) rotate(-45deg); }
+    .map-pin svg { width: 19px; height: 19px; transform: rotate(45deg); }
+    .map-label { position: absolute; z-index: 2; bottom: calc(50% - 53px); left: 50%; width: max-content; max-width: 85%; padding: 8px 11px; background: var(--paper-light); box-shadow: 0 3px 9px rgba(50,35,24,.12); color: var(--wine); font: 600 9px "DM Sans", sans-serif; transform: translateX(-50%); }
+    .directions { display: inline-flex; align-items: center; gap: 7px; color: var(--wine); font: 600 9px "DM Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
+    .directions svg { width: 14px; height: 14px; }
+
+    .rsvp-section { background: #e8dfcf; }
+    .rsvp-form { width: min(100%, 710px); margin: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: grid; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: #5f5142; font: 600 10px "DM Sans", sans-serif; letter-spacing: .06em; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 43px; padding: 10px 12px; border: 1px solid #d0c3ad; border-radius: 0; outline: none; background: var(--paper-light); color: var(--ink); font: 15px "Cormorant Garamond", Georgia, serif; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--wine); box-shadow: 0 0 0 2px rgba(116,54,67,.1); }
+    .field textarea { min-height: 82px; resize: vertical; }
+    .rsvp-form .button { justify-self: center; grid-column: 1 / -1; min-width: 180px; margin-top: 4px; }
+    .rsvp-note { grid-column: 1/-1; margin: 0; color: var(--muted); font-size: 13px; text-align: center; }
+    .site-footer { display: flex; flex-direction: column; align-items: center; padding: 32px 18px 28px; background: var(--wine-dark); color: #f8f1e6; text-align: center; }
+    .footer-names { margin: 0; font: 36px/.95 Allura, cursive; }
+    .site-footer p:last-child { margin: 8px 0 0; font: 8px "DM Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; }
+    .toast { position: fixed; z-index: 20; right: 20px; bottom: 20px; max-width: min(370px, calc(100vw - 40px)); padding: 12px 16px; background: #34392b; color: white; box-shadow: 0 8px 28px rgba(0,0,0,.2); opacity: 0; pointer-events: none; transform: translateY(8px); transition: .2s ease; font: 13px "DM Sans", sans-serif; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    @keyframes arrive { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 760px) {
+      .site-header { height: 61px; grid-template-columns: 1fr auto 1fr; padding-inline: 16px; }
+      .nav-left { position: absolute; top: 61px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 14px; border-bottom: 1px solid var(--rule); background: var(--paper-light); }
+      .nav-left.open { display: flex; }
+      .nav-link { padding: 13px 0; border-bottom: 1px solid #eee6d8; }
+      .nav-link::after { display: none; }
+      .menu-toggle { display: grid; }
+      .wordmark { grid-column: 2; }
+      .wordmark strong { font-size: 27px; }
+      .nav-right { grid-column: 3; gap: 3px; }
+      .nav-tools { gap: 0; }
+      .nav-right > .nav-link { display: none; }
+      .hero { min-height: 540px; background-position: 58% center; }
+      .hero::before { background: linear-gradient(90deg, rgba(248,241,226,.94), rgba(248,241,226,.72) 57%, rgba(248,241,226,.13)), linear-gradient(0deg, rgba(48,34,22,.18), transparent 45%); }
+      .hero-inner { width: calc(100% - 46px); padding: 60px 0 78px; }
+      .hero-copy { max-width: 470px; }
+      .hero-kicker { font-size: 22px; }
+      .hero h1 { font-size: clamp(43px, 11vw, 62px); }
+      .hero-intro { max-width: 300px; font-size: 17px; }
+      .intro-strip { grid-template-columns: 1fr; }
+      .intro-cell { min-height: 130px; padding: 21px 18px; }
+      .intro-cell + .intro-cell { border-top: 1px solid #e3d9c8; border-left: 0; }
+      .section { padding: 66px 20px; }
+      .story-grid { grid-template-columns: 1fr 55px 1fr; gap: 12px; }
+      .portrait-upload { width: min(100%, 210px); }
+      .portrait-name { font-size: clamp(25px, 7vw, 34px); }
+      .story-ampersand { font-size: 42px; }
+      .event-grid { grid-template-columns: 1fr; gap: 18px; }
+      .event-block { min-height: 190px; }
+      .venue-grid { grid-template-columns: 1fr; }
+      .venue-map { min-height: 210px; }
+    }
+    @media (max-width: 430px) {
+      .nav-tools { gap: 0; }
+      .icon-action { width: 31px; }
+      .hero { min-height: 510px; }
+      .hero-inner { width: calc(100% - 38px); }
+      .hero h1 { font-size: 44px; }
+      .hero-actions { gap: 17px; }
+      .hero-actions .button { padding-inline: 13px; }
+      .text-button { font-size: 9px; }
+      .story-grid { grid-template-columns: 1fr 30px 1fr; gap: 7px; }
+      .portrait-upload { outline-offset: 3px; }
+      .portrait-name { font-size: 25px; }
+      .portrait-role { font-size: 12px; }
+      .story-ampersand { font-size: 33px; }
+      .rsvp-form { grid-template-columns: 1fr; }
+      .field.full, .rsvp-form .button, .rsvp-note { grid-column: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+    @media print {
+      @page { margin: 12mm; }
+      .site-header, .hero-actions, .rsvp-form, .toast { display: none !important; }
+      .hero { min-height: 140mm; print-color-adjust: exact; }
+      .intro-strip, .section { break-inside: avoid; print-color-adjust: exact; }
+      body { print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header class="site-header">
+    <button class="icon-action menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+    <nav class="nav-left" id="primary-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#our-story">Our story</a>
+      <a class="nav-link" href="#the-wedding">The wedding</a>
+    </nav>
+    <a class="wordmark" href="#home" aria-label="Siddarth and Kowsalya, the wedding"><strong>Siddarth &amp; Kowsalya</strong><span>The wedding</span></a>
+    <nav class="nav-right" aria-label="Wedding details">
+      <a class="nav-link" href="#when-where">When &amp; where</a>
+      <a class="nav-link" href="#directions">Directions</a>
+      <a class="nav-link" href="#rsvp">RSVP</a>
+      <div class="nav-tools">
+        <button class="icon-action" id="share-button" type="button" aria-label="Share wedding website" title="Share"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 15V3m0 0L7.5 7.5M12 3l4.5 4.5M5 13v6.5h14V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="hero-kicker">Together with their families,</p>
+          <h1 id="hero-title"><span>Selvan G. Siddarth</span><span>&amp; Selvi S. Kowsalya</span><span>are getting married.</span></h1>
+          <div class="hero-divider" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-8-5.1-8-11a4.5 4.5 0 0 1 8-2.9A4.5 4.5 0 0 1 20 10c0 5.9-8 11-8 11Z"/></svg></div>
+          <p class="hero-intro">Celebrate with us as we begin this beautiful new chapter.</p>
+          <div class="hero-actions">
+            <a class="button" href="#rsvp">RSVP now <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <a class="text-button" href="#when-where">View details</a>
+          </div>
+          <p class="hero-date">Monday · 16 November 2026 · Chennai</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip" id="when-where" aria-label="Wedding date and venue summary">
+      <div class="intro-cell"><h2>When &amp; where</h2><div class="ornament" aria-hidden="true">❧</div><p>Monday, 16th November 2026</p><p class="small">Ceremony: 6.00 a.m. – 7.30 a.m.</p></div>
+      <div class="intro-cell"><h2>The place</h2><div class="ornament" aria-hidden="true">❧</div><p>Manjula Mahal A/C<br>Thirumana Mandapam</p><p class="small">Avadi, Chennai</p></div>
+      <div class="intro-cell" id="directions"><h2>Directions</h2><div class="ornament" aria-hidden="true">❧</div><p>Poonamallee - Avadi High Road</p><p class="small">Opp. Vivekanandha School, Avadi, Chennai.</p><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Manjula+Mahal+A%2FC+Thirumana+Mandapam+Avadi+Chennai" target="_blank" rel="noopener">Open in Google Maps ↗</a></div>
+    </section>
+
+    <section class="section" id="our-story">
+      <div class="section-inner">
+        <div class="section-heading"><p class="section-kicker">Two hearts, one beginning</p><h2>With the blessings of our families</h2><p>We would be honoured to have you with us as we celebrate our wedding.</p></div>
+        <div class="story-grid">
+          <article class="portrait-card">
+            <div class="portrait-upload" aria-label="Groom portrait placeholder"><span class="portrait-placeholder"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 19 9 13.5l3.5 3.5 3.8-5 4.2 7H3.5Z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="7.5" r="2" stroke="currentColor" stroke-width="1.2"/></svg><span>GROOM</span></span></div>
+            <h3 class="portrait-name">Selvan G. Siddarth</h3><p class="portrait-role">B.E. · Software Engineer - Athenahealth</p>
+          </article>
+          <div class="story-ampersand" aria-hidden="true">&amp;</div>
+          <article class="portrait-card">
+            <div class="portrait-upload" aria-label="Bride portrait placeholder"><span class="portrait-placeholder"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.5 19 9 13.5l3.5 3.5 3.8-5 4.2 7H3.5Z" stroke="currentColor" stroke-width="1.2"/><circle cx="8" cy="7.5" r="2" stroke="currentColor" stroke-width="1.2"/></svg><span>BRIDE</span></span></div>
+            <h3 class="portrait-name">Selvi S. Kowsalya</h3><p class="portrait-role">B.E. · Software Engineer - TCS</p>
+          </article>
+        </div>
+        <p class="family-note">Mr. R. Ganesan and Mrs. Rukmani Ganesan solicit your esteemed presence with family and friends on the auspicious occasion of the marriage of their son.<br><br>(D/o. (Late) S. Sivagnanam - Mrs. S. Latha, Chennai)</p>
+      </div>
+    </section>
+
+    <section class="section wedding-section" id="the-wedding">
+      <div class="section-inner">
+        <div class="section-heading"><p class="section-kicker">The celebrations</p><h2>A day filled with joy</h2><p>We look forward to celebrating these special moments with you.</p></div>
+        <div class="event-grid">
+          <article class="event-block"><svg class="event-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18M5 6c3 0 5 2 7 6 2-4 4-6 7-6M5 18c3 0 5-2 7-6 2 4 4 6 7 6M8 4l4 3 4-3M8 20l4-3 4 3" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>Wedding Ceremony</h3><p class="event-time">Monday, 16th November 2026</p><p>Between 6.00 a.m. and 7.30 a.m.</p><p>Manjula Mahal A/C Thirumana Mandapam</p></article>
+          <article class="event-block"><svg class="event-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s-8-5.1-8-11a4.5 4.5 0 0 1 8-2.9A4.5 4.5 0 0 1 20 10c0 5.9-8 11-8 11Z" stroke="currentColor" stroke-width="1.2"/><path d="M8 11h8M12 8v6" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg><h3>Reception</h3><p class="event-time">15th November 2026, Sunday</p><p>6.30 p.m. onwards</p><p>Manjula Mahal A/C Thirumana Mandapam</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section venue-section">
+      <div class="section-inner">
+        <div class="section-heading"><p class="section-kicker">We saved you a place</p><h2>Meet us in Avadi</h2></div>
+        <div class="venue-grid">
+          <div class="venue-copy"><p class="section-kicker">The venue</p><h3>Manjula Mahal A/C Thirumana Mandapam</h3><p class="address">Poonamallee - Avadi High Road,<br>Opp. Vivekanandha School,<br>Avadi, Chennai.</p><a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=Manjula+Mahal+A%2FC+Thirumana+Mandapam+Avadi+Chennai" target="_blank" rel="noopener">Get directions <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          <a class="venue-map" href="https://www.google.com/maps/search/?api=1&amp;query=Manjula+Mahal+A%2FC+Thirumana+Mandapam+Avadi+Chennai" target="_blank" rel="noopener" aria-label="Open venue directions in Google Maps"><span class="map-pin"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="2.2" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="map-label">Manjula Mahal · Avadi</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rsvp-section" id="rsvp">
+      <div class="section-inner">
+        <div class="section-heading"><p class="section-kicker">We hope you can join us</p><h2>Kindly reply</h2><p>Your presence will make our celebration even more special.</p></div>
+        <form class="rsvp-form" id="rsvp-form">
+          <div class="field"><label for="guest-name">Your name</label><input id="guest-name" name="name" autocomplete="name" required placeholder="Name"></div>
+          <div class="field"><label for="guest-email">Email address</label><input id="guest-email" name="email" type="email" autocomplete="email" placeholder="name@example.com"></div>
+          <div class="field"><label for="attendance">Will you be joining us?</label><select id="attendance" name="attendance" required><option value="">Please select</option><option value="joyfully-attending">Joyfully accepts</option><option value="regretfully-declines">Regretfully declines</option></select></div>
+          <div class="field"><label for="guest-count">Number of guests</label><select id="guest-count" name="guests"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+          <div class="field full"><label for="guest-message">A note for the couple</label><textarea id="guest-message" name="message" placeholder="Share a note (optional)"></textarea></div>
+          <p class="rsvp-note">This static invitation keeps your reply in this browser only; it does not send or store it online.</p>
+          <button class="button" type="submit">Send RSVP <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><p class="footer-names">Selvan G. Siddarth &amp; Selvi S. Kowsalya</p><p>With best compliments from · Relatives &amp; Friends</p></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const toast = document.querySelector("#toast");
+    let toastTimer;
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove("show"), 2800);
+    }
+
+    document.querySelector("#menu-toggle").addEventListener("click", (event) => {
+      const menu = document.querySelector("#primary-nav");
+      const isOpen = menu.classList.toggle("open");
+      event.currentTarget.setAttribute("aria-expanded", String(isOpen));
+    });
+    document.querySelectorAll("#primary-nav a").forEach((link) => link.addEventListener("click", () => {
+      document.querySelector("#primary-nav").classList.remove("open");
+      document.querySelector("#menu-toggle").setAttribute("aria-expanded", "false");
+    }));
+
+    document.querySelector("#share-button").addEventListener("click", async () => {
+      const data = { title: "Siddarth & Kowsalya — The Wedding", text: "Join Selvan G. Siddarth and Selvi S. Kowsalya for their wedding on 16th November 2026 in Avadi, Chennai.", url: window.location.href };
+      try {
+        if (navigator.share) await navigator.share(data);
+        else if (navigator.clipboard) { await navigator.clipboard.writeText(`${data.text}\n${data.url}`); showToast("Wedding invitation link copied."); }
+        else showToast("Copy this page link to share the invitation.");
+      } catch (error) { if (error.name !== "AbortError") showToast("Sharing is not available in this browser."); }
+    });
+
+    document.querySelector("#rsvp-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const response = Object.fromEntries(new FormData(form));
+      localStorage.setItem("siddarth-kowsalya-rsvp", JSON.stringify(response));
+      showToast(`Thank you, ${response.name}. Your reply is saved in this browser.`);
+      form.reset();
+    });
+  </script>
+</body>
+</html>
